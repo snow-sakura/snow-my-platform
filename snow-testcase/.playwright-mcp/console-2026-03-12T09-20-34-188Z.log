@@ -1,0 +1,10 @@
+[   26664ms] [ERROR] Access to fetch at 'https://submit.backtrace.io/UNIVERSE/TOKEN/json' from origin 'https://www.saucedemo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.saucedemo.com/:0
+[   26666ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://submit.backtrace.io/UNIVERSE/TOKEN/json:0
+[   36652ms] [ERROR] Access to fetch at 'https://submit.backtrace.io/UNIVERSE/TOKEN/json' from origin 'https://www.saucedemo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.saucedemo.com/:0
+[   36652ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://submit.backtrace.io/UNIVERSE/TOKEN/json:0
+[   48385ms] [ERROR] Access to fetch at 'https://submit.backtrace.io/UNIVERSE/TOKEN/json' from origin 'https://www.saucedemo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.saucedemo.com/:0
+[   48385ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://submit.backtrace.io/UNIVERSE/TOKEN/json:0
+[   79769ms] [ERROR] Access to fetch at 'https://submit.backtrace.io/UNIVERSE/TOKEN/json' from origin 'https://www.saucedemo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.saucedemo.com/:0
+[   79770ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://submit.backtrace.io/UNIVERSE/TOKEN/json:0
+[   88911ms] [ERROR] Access to fetch at 'https://submit.backtrace.io/UNIVERSE/TOKEN/json' from origin 'https://www.saucedemo.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://www.saucedemo.com/:0
+[   88912ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://submit.backtrace.io/UNIVERSE/TOKEN/json:0

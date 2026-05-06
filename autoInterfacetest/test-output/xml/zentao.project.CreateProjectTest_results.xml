@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="接口测试"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.227">
+  <properties />
+  
+  
+            <testcase name="testNormal" time="0.113" classname="zentao.project.CreateProjectTest" />
+                <testcase name="testFail" time="0.114" classname="zentao.project.CreateProjectTest" />
+      
+</testsuite>

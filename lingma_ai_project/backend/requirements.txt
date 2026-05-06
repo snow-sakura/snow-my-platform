@@ -1,0 +1,11 @@
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+websockets>=11.0
+autogen-agentchat==0.7.5
+autogen-core==0.7.5
+autogen-ext==0.7.5
+pyyaml
+aiofiles
+python-dotenv
+PyMuPDF>=1.23.0
+python-multipart>=0.0.6

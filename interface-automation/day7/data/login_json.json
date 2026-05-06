@@ -1,0 +1,22 @@
+[{
+  "DESC": "正确的用户名和密码",
+  "username": "admin987",
+  "password": "123456",
+  "status_code": 200,
+  "code": 200
+},
+  {
+  "DESC": "错误的用户名",
+  "username": "admin981",
+  "password": "123456",
+  "status_code": 200,
+  "code": 404
+},
+  {
+  "DESC": "错误的密码",
+  "username": "admin987",
+  "password": "12345",
+  "status_code": 200,
+  "code": 404
+}
+]

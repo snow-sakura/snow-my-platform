@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python .claude/skills/test_runner.py --list)",
+      "Bash(python .claude/skills/test_runner.py)",
+      "Bash(python .claude/skills/test_runner.py --format detailed)"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "test-runner",
+  "description": "Runs configurable tests with custom settings for directories, ignore rules, and report formats",
+  "author": "Claude Code User",
+  "version": "1.0.0",
+  "entry_point": ".claude/skills/test_runner.py",
+  "usage": [
+    {
+      "command": "test-runner",
+      "description": "Run tests with default configuration",
+      "example": "/test-runner"
+    },
+    {
+      "command": "test-runner --list",
+      "description": "List found test files without running them",
+      "example": "/test-runner --list"
+    },
+    {
+      "command": "test-runner --format detailed",
+      "description": "Run tests and show detailed output",
+      "example": "/test-runner --format detailed"
+    },
+    {
+      "command": "test-runner --directory integration_tests",
+      "description": "Run tests including additional directory",
+      "example": "/test-runner --directory integration_tests"
+    }
+  ],
+  "requirements": [
+    "Python 3.6+"
+  ]
+}

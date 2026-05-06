@@ -1,0 +1,35 @@
+{
+  "name": "doc-based-test-generator",
+  "displayName": "基于文档的测试用例生成",
+  "description": "根据需求文档自动生成标准化测试用例的技能，支持功能、API、自动化和性能测试等多种类型",
+  "version": "1.0.0",
+  "author": "Test Automation Team",
+  "triggers": [
+    "测试用例生成",
+    "基于文档的测试",
+    "功能测试用例",
+    "API测试用例",
+    "自动化测试用例",
+    "性能测试用例",
+    "测试规范",
+    "测试设计"
+  ],
+  "supportedTypes": [
+    "functional",
+    "api",
+    "automation",
+    "performance"
+  ],
+  "referencesDir": "./references",
+  "scriptsDir": "./scripts",
+  "outputFormat": "markdown",
+  "dependencies": [
+    "bash",
+    "pandoc (optional for excel export)"
+  ],
+  "usage": {
+    "input": "测试需求描述或功能说明",
+    "output": "结构化的Markdown格式测试用例",
+    "optionalOutput": "可通过脚本导出为Excel等其他格式"
+  }
+}

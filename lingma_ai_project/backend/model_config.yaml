@@ -1,0 +1,6 @@
+model_client:
+  provider: "autogen_ext.models.openai.OpenAICompatibleClient"
+  config:
+    model: "${DEEPSEEK_MODEL}"
+    api_key: "${DEEPSEEK_API_KEY}"
+    base_url: "${DEEPSEEK_BASE_URL}"

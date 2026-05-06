@@ -1,0 +1,300 @@
+2026-04-02 17:38:11,868 - web_login_page - INFO - 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver.exe
+2026-04-02 17:39:32,802 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:39:32,803 - web_login_page - ERROR - ❌ 找不到适合 Darwin 的 chromedriver
+2026-04-02 17:39:32,803 - web_login_page - ERROR - 请在 /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver 目录中放置正确的 chromedriver 文件
+2026-04-02 17:39:32,803 - web_login_page - ERROR - macOS 用户请下载：https://chromedriver.chromium.org/downloads
+2026-04-02 17:39:32,803 - web_login_page - ERROR - 选择对应版本：Intel 64
+2026-04-02 17:46:01,548 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:46:01,548 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 17:46:45,525 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:46:45,526 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 17:48:46,842 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:48:46,842 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 17:51:54,959 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:51:54,959 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 17:51:54,960 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 17:52:05,422 - web_login_page - ERROR - ❌ Chrome 启动失败：Message: session not created: This version of ChromeDriver only supports Chrome version 147
+Current browser version is 146.0.7680.153 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+2026-04-02 17:52:05,424 - web_login_page - ERROR - 
+请检查：
+2026-04-02 17:52:05,424 - web_login_page - ERROR - 1. Chrome 浏览器是否已安装
+2026-04-02 17:52:05,424 - web_login_page - ERROR - 2. Chrome 版本是否与 chromedriver 匹配
+2026-04-02 17:52:05,424 - web_login_page - ERROR - 3. macOS 用户：系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能 → 添加 Chrome
+2026-04-02 17:52:05,424 - web_login_page - ERROR - 
+Chrome 下载地址：https://www.google.com/chrome/
+2026-04-02 17:53:32,230 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:53:32,231 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 17:53:32,231 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 17:53:42,985 - web_login_page - ERROR - ❌ Chrome 启动失败：Message: session not created: This version of ChromeDriver only supports Chrome version 147
+Current browser version is 146.0.7680.153 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+2026-04-02 17:53:42,987 - web_login_page - ERROR - 
+请检查：
+2026-04-02 17:53:42,987 - web_login_page - ERROR - 1. Chrome 浏览器是否已安装
+2026-04-02 17:53:42,987 - web_login_page - ERROR - 2. Chrome 版本是否与 chromedriver 匹配
+2026-04-02 17:53:42,987 - web_login_page - ERROR - 3. macOS 用户：系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能 → 添加 Chrome
+2026-04-02 17:53:42,987 - web_login_page - ERROR - 
+Chrome 下载地址：https://www.google.com/chrome/
+2026-04-02 17:56:11,122 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 17:56:11,122 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 17:56:11,122 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 17:57:17,888 - web_login_page - ERROR - ❌ Chrome 启动失败：Message: session not created: DevToolsActivePort file doesn't exist
+
+2026-04-02 17:57:17,889 - web_login_page - ERROR - 
+请检查：
+2026-04-02 17:57:17,889 - web_login_page - ERROR - 1. Chrome 浏览器是否已安装
+2026-04-02 17:57:17,889 - web_login_page - ERROR - 2. Chrome 版本是否与 chromedriver 匹配
+2026-04-02 17:57:17,889 - web_login_page - ERROR - 3. macOS 用户：系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能 → 添加 Chrome
+2026-04-02 17:57:17,889 - web_login_page - ERROR - 
+Chrome 下载地址：https://www.google.com/chrome/
+2026-04-02 18:07:22,601 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 18:07:22,601 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 18:07:22,602 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 18:07:31,672 - web_login_page - ERROR - ❌ Chrome 启动失败：Message: Service /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver unexpectedly exited. Status code was: -9
+
+2026-04-02 18:07:31,675 - web_login_page - ERROR - 
+请检查：
+2026-04-02 18:07:31,675 - web_login_page - ERROR - 1. Chrome 浏览器是否已安装
+2026-04-02 18:07:31,675 - web_login_page - ERROR - 2. Chrome 版本是否与 chromedriver 匹配
+2026-04-02 18:07:31,675 - web_login_page - ERROR - 3. macOS 用户：系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能 → 添加 Chrome
+2026-04-02 18:07:31,675 - web_login_page - ERROR - 
+Chrome 下载地址：https://www.google.com/chrome/
+2026-04-02 18:09:06,949 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 18:09:06,949 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 18:09:06,950 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 18:09:18,372 - web_login_page - INFO - ✅ Chrome 启动成功
+2026-04-02 18:09:18,374 - web_login_page - ERROR - ❌ Chrome 启动失败：set_var() missing 1 required positional argument: 'value'
+2026-04-02 18:09:18,374 - web_login_page - ERROR - 
+请检查：
+2026-04-02 18:09:18,374 - web_login_page - ERROR - 1. Chrome 浏览器是否已安装
+2026-04-02 18:09:18,374 - web_login_page - ERROR - 2. Chrome 版本是否与 chromedriver 匹配
+2026-04-02 18:09:18,374 - web_login_page - ERROR - 3. macOS 用户：系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能 → 添加 Chrome
+2026-04-02 18:09:18,374 - web_login_page - ERROR - 
+Chrome 下载地址：https://www.google.com/chrome/
+2026-04-02 18:15:57,869 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 18:15:57,870 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 18:15:57,870 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 18:16:08,617 - web_login_page - INFO - ✅ Chrome 启动成功
+2026-04-02 18:16:08,621 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 18:16:15,966 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 18:16:17,975 - baseAutoWeb.py - ERROR - 元素login/username未找到
+2026-04-02 18:16:17,975 - baseAutoWeb.py - ERROR - 元素login/username未找到
+2026-04-02 18:16:17,975 - baseAutoWeb.py - ERROR - 元素login/username未找到
+2026-04-02 18:16:17,975 - baseAutoWeb.py - ERROR - 元素login/username未找到
+2026-04-02 18:16:19,981 - baseAutoWeb.py - ERROR - 元素login/password未找到
+2026-04-02 18:16:19,982 - baseAutoWeb.py - ERROR - 元素login/password未找到
+2026-04-02 18:16:19,986 - baseAutoWeb.py - ERROR - 元素login/password未找到
+2026-04-02 18:16:19,986 - baseAutoWeb.py - ERROR - 元素login/password未找到
+2026-04-02 18:16:21,990 - baseAutoWeb.py - ERROR - 元素login/login_button未找到
+2026-04-02 18:16:21,991 - baseAutoWeb.py - ERROR - 元素login/login_button未找到
+2026-04-02 18:16:21,991 - web_login_page - ERROR - ❌ Chrome 启动失败：string indices must be integers
+2026-04-02 18:16:21,991 - web_login_page - ERROR - 
+请检查：
+2026-04-02 18:16:21,991 - web_login_page - ERROR - 1. Chrome 浏览器是否已安装
+2026-04-02 18:16:21,991 - web_login_page - ERROR - 2. Chrome 版本是否与 chromedriver 匹配
+2026-04-02 18:16:21,991 - web_login_page - ERROR - 3. macOS 用户：系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能 → 添加 Chrome
+2026-04-02 18:16:21,991 - web_login_page - ERROR - 
+Chrome 下载地址：https://www.google.com/chrome/
+2026-04-02 18:26:36,797 - web_login_page - INFO - 当前系统：Darwin x86_64
+2026-04-02 18:26:36,797 - web_login_page - INFO - ✅ 使用 chromedriver: /Users/snow/snow-sakura/snow-prject/snow-python/TestFramework_po/Driver/chromedriver
+2026-04-02 18:26:36,797 - web_login_page - INFO - 正在启动 Chrome 浏览器...
+2026-04-02 18:26:48,755 - web_login_page - INFO - ✅ Chrome 启动成功
+2026-04-02 18:26:48,764 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 18:26:55,005 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 18:26:57,011 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:26:57,213 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 18:26:57,629 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 18:26:57,631 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:26:57,693 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 18:26:59,404 - baseAutoWeb.py - INFO - 已输入元素：admin
+2026-04-02 18:27:01,410 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:27:01,430 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 18:27:01,820 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 18:27:01,821 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:27:01,864 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 18:27:02,723 - baseAutoWeb.py - INFO - 已输入元素：123456
+2026-04-02 18:27:04,731 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:27:04,752 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 18:27:06,332 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 18:27:06,332 - web_login_page - INFO - 登录操作执行完成
+2026-04-02 18:32:42,738 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 18:32:49,719 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 18:32:51,741 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:32:52,027 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 18:32:52,452 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 18:32:52,454 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:32:52,508 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 18:32:54,456 - baseAutoWeb.py - INFO - 已输入元素：admin
+2026-04-02 18:32:56,481 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:32:56,518 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 18:32:56,819 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 18:32:56,820 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:32:56,857 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 18:32:57,557 - baseAutoWeb.py - INFO - 已输入元素：123456
+2026-04-02 18:32:59,565 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 18:32:59,579 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 18:33:01,117 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 18:33:01,117 - web_login_page - INFO - 登录操作执行完成
+2026-04-02 20:07:09,938 - baseData.py - ERROR - 文件不存在
+2026-04-02 20:15:55,213 - baseData.py - ERROR - 文件不存在
+2026-04-02 20:16:19,692 - baseData.py - ERROR - 文件不存在
+2026-04-02 20:24:20,019 - baseData.py - ERROR - 文件不存在
+2026-04-02 21:48:00,241 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 21:48:15,541 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 21:48:17,555 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:17,871 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:48:18,245 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:48:18,247 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:18,310 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:48:21,663 - baseAutoWeb.py - INFO - 已输入元素：standard_user
+2026-04-02 21:48:23,680 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:23,740 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:48:24,036 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:48:24,039 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:24,057 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:48:24,588 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 21:48:26,599 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:26,706 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 21:48:29,773 - baseAutoWeb.py - ERROR - 元素login/login_button未找到
+2026-04-02 21:48:43,592 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 21:48:50,722 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 21:48:52,732 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:52,922 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:48:53,289 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:48:53,291 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:53,334 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:48:57,081 - baseAutoWeb.py - INFO - 已输入元素：locked_out_user
+2026-04-02 21:48:59,094 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:59,126 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:48:59,382 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:48:59,384 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:48:59,389 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:48:59,916 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 21:49:01,926 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:49:01,942 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 21:49:03,367 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 21:49:03,368 - web_login_page - INFO - 登录操作执行完成
+2026-04-02 21:49:18,667 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 21:49:24,957 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 21:49:26,969 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:49:27,148 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:49:27,518 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:49:27,521 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:49:27,562 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:49:30,222 - baseAutoWeb.py - INFO - 已输入元素：problem_user
+2026-04-02 21:49:32,232 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:49:32,274 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:49:32,587 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:49:32,589 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:49:32,625 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:49:33,482 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 21:49:35,493 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:49:35,535 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 21:49:38,684 - baseAutoWeb.py - ERROR - 元素login/login_button未找到
+2026-04-02 21:54:44,503 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 21:54:57,516 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 21:54:59,527 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:54:59,686 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:55:00,152 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:55:00,154 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:00,199 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:55:03,257 - baseAutoWeb.py - INFO - 已输入元素：standard_user
+2026-04-02 21:55:05,265 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:05,318 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:55:05,610 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:55:05,612 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:05,628 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:55:06,068 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 21:55:08,079 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:08,109 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 21:55:11,096 - baseAutoWeb.py - ERROR - 元素login/login_button未找到
+2026-04-02 21:55:25,084 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 21:55:31,196 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 21:55:33,207 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:33,604 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:55:34,198 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:55:34,203 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:34,267 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:55:37,514 - baseAutoWeb.py - INFO - 已输入元素：locked_out_user
+2026-04-02 21:55:39,528 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:39,567 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:55:39,877 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:55:39,879 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:39,901 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:55:40,329 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 21:55:42,338 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:55:42,358 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 21:55:44,095 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 21:55:44,095 - web_login_page - INFO - 登录操作执行完成
+2026-04-02 21:55:59,144 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 21:56:05,567 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 21:56:07,581 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:56:07,870 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:56:08,281 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:56:08,283 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:56:08,327 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 21:56:11,159 - baseAutoWeb.py - INFO - 已输入元素：problem_user
+2026-04-02 21:56:13,169 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:56:13,221 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:56:13,538 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 21:56:13,540 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:56:13,569 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 21:56:14,046 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 21:56:16,053 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 21:56:16,123 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 21:56:19,133 - baseAutoWeb.py - ERROR - 元素login/login_button未找到
+2026-04-02 22:00:29,474 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 22:00:36,484 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 22:00:38,494 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:00:38,794 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 22:00:39,338 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 22:00:39,340 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:00:39,420 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 22:00:42,413 - baseAutoWeb.py - INFO - 已输入元素：standard_user
+2026-04-02 22:00:44,434 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:00:44,490 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 22:00:44,767 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 22:00:44,769 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:00:44,787 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 22:00:45,235 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 22:00:47,247 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:00:47,287 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 22:00:49,998 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 22:00:49,999 - web_login_page - INFO - 登录操作执行完成
+2026-04-02 22:01:03,307 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 22:01:14,798 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 22:01:16,810 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:17,205 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 22:01:17,710 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 22:01:17,713 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:17,784 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 22:01:20,240 - baseAutoWeb.py - INFO - 已输入元素：locked_out_user
+2026-04-02 22:01:22,260 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:22,288 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 22:01:22,709 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 22:01:22,712 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:22,730 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 22:01:23,740 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 22:01:25,752 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:25,775 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 22:01:27,899 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 22:01:27,900 - web_login_page - INFO - 登录操作执行完成
+2026-04-02 22:01:42,655 - web_login_page - INFO - 开始执行登录操作
+2026-04-02 22:01:56,690 - baseAutoWeb.py - INFO - 已打开https://www.saucedemo.com
+2026-04-02 22:01:58,704 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:58,957 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 22:01:59,437 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 22:01:59,440 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:01:59,489 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->user-name
+2026-04-02 22:02:04,087 - baseAutoWeb.py - INFO - 已输入元素：problem_user
+2026-04-02 22:02:06,100 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:02:06,144 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 22:02:06,457 - baseAutoWeb.py - INFO - 已清空元素：
+2026-04-02 22:02:06,459 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:02:06,483 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->password
+2026-04-02 22:02:06,973 - baseAutoWeb.py - INFO - 已输入元素：secret_sauce
+2026-04-02 22:02:08,980 - baseAutoWeb.py - ERROR - locator参数类型错误，必须列表或者元组类型:loc = ["id","value1"]
+2026-04-02 22:02:08,996 - baseAutoWeb.py - INFO - 已定位元素信息：定位方式->id,value值->login-button
+2026-04-02 22:02:12,030 - baseAutoWeb.py - INFO - 已点击元素：
+2026-04-02 22:02:12,032 - web_login_page - INFO - 登录操作执行完成

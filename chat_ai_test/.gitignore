@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+.pytest_cache/
+.coverage
+htmlcov/
