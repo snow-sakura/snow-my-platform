@@ -67,10 +67,15 @@ pip install -r requirements.txt
 - `pymupdf4llm` - PDF解析
 - `python-docx` - Word文档解析
 
-### 4. 创建MySQL数据库
+### 4. 创建MySQL数据库与用户（应用使用 `snow` 账号，不依赖 root 登录应用）
+
+在仍能通过**有权限的管理员**连接 MySQL 的前提下执行（例如首次安装时用 `mysql` 系统账号或已保留的管理员；日常开发在 `.env` 中只配置 `snow`）：
 
 ```sql
-CREATE DATABASE test_platform CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS test_platform CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'snow'@'localhost' IDENTIFIED BY '与.env中一致的密码';
+GRANT ALL PRIVILEGES ON test_platform.* TO 'snow'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
 ### 5. 配置环境变量
@@ -83,8 +88,8 @@ cp .env.example .env
 编辑 `.env` 文件,配置以下参数:
 
 ```ini
-# 数据库配置(修改用户名和密码)
-DATABASE_URL=mysql+aiomysql://用户名:密码@localhost:3306/test_platform
+# 数据库配置（snow 用户与上一步 MySQL 中密码一致）
+DATABASE_URL=mysql+aiomysql://snow:你的密码@localhost:3306/test_platform
 
 # LLM配置(必须配置API Key)
 LLM_API_KEY=sk-your-api-key-here
@@ -203,17 +208,17 @@ FEISHU_WEBHOOK_URL=https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx
 
 ### MySQL配置
 
-**创建用户和数据库:**
+**创建用户和数据库（推荐 `snow` 与仓库默认一致）:**
 ```sql
-CREATE USER 'test_platform'@'localhost' IDENTIFIED BY 'your_password';
-CREATE DATABASE test_platform CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON test_platform.* TO 'test_platform'@'localhost';
+CREATE DATABASE IF NOT EXISTS test_platform CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'snow'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON test_platform.* TO 'snow'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 **更新配置:**
 ```ini
-DATABASE_URL=mysql+aiomysql://test_platform:your_password@localhost:3306/test_platform
+DATABASE_URL=mysql+aiomysql://snow:your_password@localhost:3306/test_platform
 ```
 
 ---
@@ -242,8 +247,8 @@ Can't connect to MySQL server
 
 **检查步骤:**
 1. MySQL服务是否启动: `mysql.server status`
-2. 数据库是否存在: `mysql -u root -p -e "SHOW DATABASES;"`
-3. 用户名密码是否正确
+2. 数据库是否存在: `mysql -u snow -p -e "SHOW DATABASES;"`（或你 `.env` 中配置的账号）
+3. `snow` 用户密码是否与 `DATABASE_URL` 中一致
 
 **启动MySQL(Mac):**
 ```bash

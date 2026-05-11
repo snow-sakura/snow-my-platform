@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -40,3 +42,19 @@ async def list_project_batches(project_id: int, db: AsyncSession = Depends(get_d
     )
     batches = result.scalars().all()
     return batches
+
+
+@router.put("/{batch_id}/cancel")
+async def cancel_batch(batch_id: int, db: AsyncSession = Depends(get_db)):
+    """取消正在运行或等待中的任务批次"""
+    result = await db.execute(select(TaskBatch).where(TaskBatch.id == batch_id))
+    batch = result.scalar_one_or_none()
+    if not batch:
+        raise HTTPException(status_code=404, detail="任务批次不存在")
+    if batch.status not in ("PENDING", "RUNNING"):
+        raise HTTPException(status_code=400, detail="只能取消等待中或运行中的任务")
+    batch.status = "FAILED"
+    batch.error_message = "用户手动取消"
+    batch.completed_at = datetime.utcnow()
+    await db.flush()
+    return {"message": "任务已取消"}

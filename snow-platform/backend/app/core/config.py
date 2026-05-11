@@ -5,7 +5,9 @@ from typing import Optional
 
 class Settings(BaseSettings):
     # 数据库配置
-    DATABASE_URL: str = "mysql+aiomysql://root:password@localhost:3306/test_platform"
+    DATABASE_URL: str = (
+        "mysql+aiomysql://snow:your_password@localhost:3306/test_platform"
+    )
     
     # LLM配置
     LLM_API_KEY: str = ""

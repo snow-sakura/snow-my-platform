@@ -36,6 +36,11 @@ const router = createRouter({
               path: 'test-cases',
               name: 'TestCases',
               component: () => import('@/views/TestCases.vue')
+            },
+            {
+              path: 'batches',
+              name: 'Batches',
+              component: () => import('@/views/BatchTracker.vue')
             }
           ]
         },

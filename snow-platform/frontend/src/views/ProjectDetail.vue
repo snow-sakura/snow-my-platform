@@ -11,17 +11,32 @@
         <el-button @click="$router.back()">返回列表</el-button>
       </div>
     </div>
-    
+
     <el-card class="content-card" :body-style="{ padding: '0' }">
       <el-tabs v-model="activeTab" @tab-click="handleTabChange">
-        <el-tab-pane label="文档管理" name="documents" />
-        <el-tab-pane label="测试点" name="test-points" />
-        <el-tab-pane label="知识库" name="knowledge-bases" />
-        <el-tab-pane label="测试用例" name="test-cases" />
+        <el-tab-pane name="documents">
+          <template #label>文档管理</template>
+        </el-tab-pane>
+        <el-tab-pane name="test-points">
+          <template #label>测试点</template>
+        </el-tab-pane>
+        <el-tab-pane name="knowledge-bases">
+          <template #label>知识库</template>
+        </el-tab-pane>
+        <el-tab-pane name="test-cases">
+          <template #label>测试用例</template>
+        </el-tab-pane>
+        <el-tab-pane name="batches">
+          <template #label>
+            任务批次
+            <el-badge v-if="runningCount > 0" :value="runningCount" style="margin-left: 6px;" />
+          </template>
+        </el-tab-pane>
       </el-tabs>
-      
+
       <div class="tab-content">
-        <router-view />
+        <router-view v-if="activeTab !== 'batches'" />
+        <BatchTracker v-else :projectId="projectId" />
       </div>
     </el-card>
   </div>
@@ -31,11 +46,14 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getProject } from '@/api/project'
+import { getProjectBatches, type TaskBatch } from '@/api/test'
+import BatchTracker from './BatchTracker.vue'
 
 const route = useRoute()
 const router = useRouter()
 const activeTab = ref('documents')
 const projectName = ref('')
+const runningCount = ref(0)
 
 const projectId = computed(() => Number(route.params.id))
 
@@ -48,21 +66,38 @@ const loadProject = async () => {
   }
 }
 
+const loadRunningCount = async () => {
+  try {
+    const batches = await getProjectBatches(projectId.value)
+    runningCount.value = batches.filter(b => b.status === 'RUNNING' || b.status === 'PENDING').length
+  } catch { /* 静默失败 */ }
+}
+
 const handleTabChange = (tab: any) => {
-  router.push(`/project/${projectId.value}/${tab.props.name}`)
+  const name = tab.props.name
+  if (name === 'batches') {
+    router.push(`/project/${projectId.value}/batches`)
+    loadRunningCount()
+  } else {
+    router.push(`/project/${projectId.value}/${name}`)
+  }
 }
 
 const syncTabWithRoute = () => {
   const routeName = route.name as string
-  if (routeName && ['documents', 'test-points', 'test-cases'].includes(routeName)) {
+  if (routeName && ['documents', 'test-points', 'knowledge-bases', 'test-cases', 'batches'].includes(routeName)) {
     activeTab.value = routeName
   }
 }
 
 watch(() => route.name, syncTabWithRoute)
+watch(activeTab, () => {
+  if (activeTab.value !== 'batches') loadRunningCount()
+})
 
 onMounted(() => {
   loadProject()
+  loadRunningCount()
   syncTabWithRoute()
 })
 </script>

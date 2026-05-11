@@ -32,7 +32,19 @@ class DocumentResponse(BaseModel):
     filename: str
     file_type: str
     uploaded_at: datetime
-    
+
+    class Config:
+        from_attributes = True
+
+
+class DocumentDetailResponse(BaseModel):
+    id: int
+    project_id: int
+    filename: str
+    file_type: str
+    content: Optional[str] = None
+    uploaded_at: datetime
+
     class Config:
         from_attributes = True
 
@@ -115,6 +127,11 @@ class TestCaseResponse(BaseModel):
 # 知识库相关Schema
 class KnowledgeBaseCreate(BaseModel):
     name: str
+    description: Optional[str] = None
+
+
+class KnowledgeBaseUpdate(BaseModel):
+    name: Optional[str] = None
     description: Optional[str] = None
 
 

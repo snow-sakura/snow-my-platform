@@ -8,7 +8,7 @@ from datetime import datetime
 
 from app.core.database import get_db
 from app.models import Project, Document, TestPoint, TestCase
-from app.schemas import ProjectCreate, ProjectUpdate, ProjectResponse, DocumentResponse
+from app.schemas import ProjectCreate, ProjectUpdate, ProjectResponse, DocumentResponse, DocumentDetailResponse
 from app.services.document_parser import DocumentParser
 
 router = APIRouter(prefix="/projects", tags=["项目管理"])
@@ -169,3 +169,31 @@ async def list_documents(project_id: int, db: AsyncSession = Depends(get_db)):
     )
     documents = result.scalars().all()
     return documents
+
+
+@router.get("/{project_id}/documents/{document_id}", response_model=DocumentDetailResponse)
+async def get_document(project_id: int, document_id: int, db: AsyncSession = Depends(get_db)):
+    """获取文档详情（含解析内容）"""
+    result = await db.execute(
+        select(Document).where(Document.id == document_id, Document.project_id == project_id)
+    )
+    document = result.scalar_one_or_none()
+    if not document:
+        raise HTTPException(status_code=404, detail="文档不存在")
+    return document
+
+
+@router.delete("/{project_id}/documents/{document_id}")
+async def delete_document(project_id: int, document_id: int, db: AsyncSession = Depends(get_db)):
+    """删除文档"""
+    result = await db.execute(
+        select(Document).where(Document.id == document_id, Document.project_id == project_id)
+    )
+    document = result.scalar_one_or_none()
+    if not document:
+        raise HTTPException(status_code=404, detail="文档不存在")
+    # 删除物理文件
+    if os.path.exists(document.file_path):
+        os.remove(document.file_path)
+    await db.delete(document)
+    return {"message": "文档删除成功"}

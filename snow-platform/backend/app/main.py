@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 import sys
+from sqlalchemy.exc import OperationalError
 
 from app.core.database import engine, Base
 from app.core.config import settings
@@ -41,11 +42,22 @@ app.include_router(batches.router, prefix="/api/v1")
 async def startup():
     """应用启动时执行"""
     logger.info("正在启动应用...")
-    
-    # 创建数据库表
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-    
+
+    try:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+    except OperationalError as e:
+        detail = str(e.orig) if getattr(e, "orig", None) else str(e)
+        if "1045" in detail or "Access denied" in detail:
+            logger.error(
+                "MySQL 拒绝登录 (1045)：请核对 backend/.env 里 DATABASE_URL 的用户 snow 与密码；"
+                "若用户尚未创建，请用有权限的管理员在 MySQL 中执行："
+                "CREATE USER IF NOT EXISTS 'snow'@'localhost' IDENTIFIED BY '你的密码'; "
+                "GRANT ALL ON test_platform.* TO 'snow'@'localhost'; FLUSH PRIVILEGES; "
+                "（密码须与 DATABASE_URL 一致；特殊字符请做 URL 编码）"
+            )
+        raise
+
     logger.info("应用启动完成")
 
 

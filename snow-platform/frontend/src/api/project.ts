@@ -52,7 +52,26 @@ export const uploadDocument = (projectId: number, file: File) => {
   })
 }
 
+export interface DocumentDetail {
+  id: number
+  project_id: number
+  filename: string
+  file_type: string
+  content?: string
+  uploaded_at: string
+}
+
 // 获取文档列表
 export const getDocuments = (projectId: number) => {
-  return request.get(`/projects/${projectId}/documents`)
+  return request.get<DocumentDetail[]>(`/projects/${projectId}/documents`)
+}
+
+// 获取文档详情
+export const getDocument = (projectId: number, documentId: number) => {
+  return request.get<DocumentDetail>(`/projects/${projectId}/documents/${documentId}`)
+}
+
+// 删除文档
+export const deleteDocument = (projectId: number, documentId: number) => {
+  return request.delete(`/projects/${projectId}/documents/${documentId}`)
 }

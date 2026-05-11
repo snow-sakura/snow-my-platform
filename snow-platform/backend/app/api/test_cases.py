@@ -7,8 +7,10 @@ from datetime import datetime
 
 from app.core.database import get_db
 from app.models import Project, TestPoint, TestCase, KnowledgeBase, TaskBatch
-from app.schemas import TestCaseResponse, TestCaseUpdate, GenerateTestCasesRequest, TaskBatchResponse
+from app.schemas import TestCaseCreate, TestCaseResponse, TestCaseUpdate, GenerateTestCasesRequest, TaskBatchResponse
+from sqlalchemy import func
 from app.services.llm_service import llm_service
+from app.services.rag_service import rag_service
 from app.services.feishu_service import feishu_service
 from app.services.excel_exporter import excel_exporter
 from fastapi.responses import Response
@@ -31,15 +33,39 @@ async def generate_test_cases_task(batch_id: int, test_point_ids: List[int],
             batch.started_at = datetime.utcnow()
             await db.flush()
             
+            # 查询知识库获取 RAG 上下文
+            rag_context = None
+            if knowledge_base_ids:
+                result = await db.execute(
+                    select(KnowledgeBase).where(KnowledgeBase.id.in_(knowledge_base_ids))
+                )
+                knowledge_bases = result.scalars().all()
+
+                rag_parts = []
+                for kb in knowledge_bases:
+                    try:
+                        query_results = rag_service.query_documents(
+                            kb.chroma_collection_name,
+                            "测试用例 测试点 功能测试 质量保证",
+                            n_results=3
+                        )
+                        docs = query_results.get("documents", [[]])[0]
+                        if docs:
+                            rag_parts.append(f"知识库 [{kb.name}]:\n" + "\n".join(f"- {d}" for d in docs))
+                    except Exception:
+                        pass
+                if rag_parts:
+                    rag_context = "\n".join(rag_parts)
+
             # 获取测试点
             result = await db.execute(
                 select(TestPoint).where(TestPoint.id.in_(test_point_ids))
             )
             test_points = result.scalars().all()
-            
+
             total_points = len(test_points)
             completed = 0
-            
+
             # 逐个测试点生成用例
             for tp in test_points:
                 try:
@@ -49,11 +75,28 @@ async def generate_test_cases_task(batch_id: int, test_point_ids: List[int],
                         'priority': tp.priority,
                         'category': tp.category
                     }
-                    
+
+                    # 针对每个测试点查询更精确的 RAG 上下文
+                    tp_rag_context = rag_context
+                    if knowledge_base_ids and not rag_context:
+                        # 回退：用测试点内容查询
+                        for kb in knowledge_bases:
+                            try:
+                                query_results = rag_service.query_documents(
+                                    kb.chroma_collection_name,
+                                    f"{tp.title} {tp.description or ''}",
+                                    n_results=2
+                                )
+                                docs = query_results.get("documents", [[]])[0]
+                                if docs:
+                                    tp_rag_context = f"知识库 [{kb.name}]:\n" + "\n".join(f"- {d}" for d in docs)
+                            except Exception:
+                                pass
+
                     # 调用LLM生成测试用例
                     test_cases_data = await llm_service.generate_test_cases(
                         test_point_data,
-                        rag_context=None  # 可以添加RAG上下文
+                        rag_context=tp_rag_context
                     )
                     
                     # 保存测试用例到数据库
@@ -240,9 +283,42 @@ async def export_test_cases(project_id: int, db: AsyncSession = Depends(get_db))
     
     # 生成Excel
     excel_bytes = excel_exporter.export_test_cases(cases_data)
-    
+
     return Response(
         content=excel_bytes,
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         headers={"Content-Disposition": f"attachment; filename=test_cases_{project_id}.xlsx"}
     )
+
+
+@router.post("/", response_model=TestCaseResponse)
+async def create_test_case(create_data: TestCaseCreate, project_id: int,
+                           db: AsyncSession = Depends(get_db)):
+    """手动创建测试用例"""
+    result = await db.execute(select(TestPoint).where(TestPoint.id == create_data.test_point_id))
+    test_point = result.scalar_one_or_none()
+    if not test_point:
+        raise HTTPException(status_code=404, detail="关联测试点不存在")
+
+    # 生成用例编号
+    count_result = await db.execute(
+        select(func.count(TestCase.id)).where(TestCase.test_point_id == create_data.test_point_id)
+    )
+    existing_count = count_result.scalar() or 0
+    case_number = f"TC-{create_data.test_point_id}-{existing_count + 1}"
+
+    test_case = TestCase(
+        project_id=project_id,
+        test_point_id=create_data.test_point_id,
+        case_number=case_number,
+        title=create_data.title,
+        precondition=create_data.precondition,
+        steps=[step.model_dump() for step in create_data.steps] if create_data.steps else [],
+        expected_result=create_data.expected_result,
+        priority=create_data.priority,
+        case_type=create_data.case_type
+    )
+    db.add(test_case)
+    await db.flush()
+    await db.refresh(test_case)
+    return test_case

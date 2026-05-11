@@ -7,7 +7,7 @@ from datetime import datetime
 
 from app.core.database import get_db
 from app.models import Project, Document, TestPoint, KnowledgeBase, TaskBatch
-from app.schemas import TestPointResponse, TestPointUpdate, ExtractTestPointsRequest, TaskBatchResponse
+from app.schemas import TestPointCreate, TestPointResponse, TestPointUpdate, ExtractTestPointsRequest, TaskBatchResponse
 from app.services.llm_service import llm_service
 from app.services.rag_service import rag_service
 from app.services.feishu_service import feishu_service
@@ -43,12 +43,20 @@ async def extract_test_points_task(batch_id: int, document_ids: List[int],
                     select(KnowledgeBase).where(KnowledgeBase.id.in_(knowledge_base_ids))
                 )
                 knowledge_bases = result.scalars().all()
-                
+
                 for kb in knowledge_bases:
-                    # 简单聚合所有文档作为上下文
                     rag_context += f"\n知识库 [{kb.name}]:\n"
-                    # 这里可以优化为更智能的RAG查询
-                    # 暂时使用占位符，实际应该根据文档内容查询相关片段
+                    # 查询 ChromaDB 获取与文档内容相关的知识片段
+                    try:
+                        query_results = rag_service.query_documents(
+                            kb.chroma_collection_name,
+                            documents[0].content if documents else "",
+                            n_results=3
+                        )
+                        for doc_text in query_results.get("documents", [[]])[0]:
+                            rag_context += f"- {doc_text}\n"
+                    except Exception:
+                        pass
             
             total_docs = len(documents)
             completed = 0
@@ -196,9 +204,31 @@ async def delete_test_point(test_point_id: int, db: AsyncSession = Depends(get_d
     """删除测试点"""
     result = await db.execute(select(TestPoint).where(TestPoint.id == test_point_id))
     test_point = result.scalar_one_or_none()
-    
+
     if not test_point:
         raise HTTPException(status_code=404, detail="测试点不存在")
-    
+
     await db.delete(test_point)
     return {"message": "测试点删除成功"}
+
+
+@router.post("/", response_model=TestPointResponse)
+async def create_test_point(create_data: TestPointCreate, project_id: int,
+                            db: AsyncSession = Depends(get_db)):
+    """手动创建测试点"""
+    result = await db.execute(select(Project).where(Project.id == project_id))
+    project = result.scalar_one_or_none()
+    if not project:
+        raise HTTPException(status_code=404, detail="项目不存在")
+
+    test_point = TestPoint(
+        project_id=project_id,
+        title=create_data.title,
+        description=create_data.description,
+        priority=create_data.priority,
+        category=create_data.category
+    )
+    db.add(test_point)
+    await db.flush()
+    await db.refresh(test_point)
+    return test_point

@@ -44,6 +44,27 @@
       <el-empty v-if="projects.length === 0" description="暂无项目，点击右上角新建项目" />
     </div>
 
+    <!-- 编辑项目对话框 -->
+    <el-dialog v-model="showEditDialog" title="编辑项目" width="500px">
+      <el-form :model="editForm" label-width="80px">
+        <el-form-item label="项目名称" required>
+          <el-input v-model="editForm.name" placeholder="请输入项目名称" />
+        </el-form-item>
+        <el-form-item label="项目描述">
+          <el-input
+            v-model="editForm.description"
+            type="textarea"
+            :rows="3"
+            placeholder="请输入项目描述"
+          />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button @click="showEditDialog = false">取消</el-button>
+        <el-button type="primary" @click="handleSaveEdit" :loading="editing">确定</el-button>
+      </template>
+    </el-dialog>
+
     <!-- 创建项目对话框 -->
     <el-dialog v-model="showCreateDialog" title="新建项目" width="500px">
       <el-form :model="createForm" label-width="80px">
@@ -73,16 +94,17 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { getProjects, createProject, deleteProject, type ProjectCreate } from '@/api/project'
+import { getProjects, createProject, updateProject, deleteProject, type ProjectCreate } from '@/api/project'
 
 const router = useRouter()
 const projects = ref<any[]>([])
 const showCreateDialog = ref(false)
+const showEditDialog = ref(false)
 const creating = ref(false)
-const createForm = ref<ProjectCreate>({
-  name: '',
-  description: ''
-})
+const editing = ref(false)
+const editProjectId = ref<number | null>(null)
+const createForm = ref<ProjectCreate>({ name: '', description: '' })
+const editForm = ref<ProjectCreate>({ name: '', description: '' })
 
 const loadProjects = async () => {
   try {
@@ -113,7 +135,28 @@ const handleCreate = async () => {
 }
 
 const handleEdit = (project: any) => {
-  ElMessage.info('编辑功能开发中')
+  editProjectId.value = project.id
+  editForm.value = { name: project.name, description: project.description || '' }
+  showEditDialog.value = true
+}
+
+const handleSaveEdit = async () => {
+  if (!editForm.value.name) {
+    ElMessage.warning('请输入项目名称')
+    return
+  }
+  editing.value = true
+  try {
+    await updateProject(editProjectId.value!, editForm.value)
+    ElMessage.success('更新成功')
+    showEditDialog.value = false
+    editProjectId.value = null
+    await loadProjects()
+  } catch (error) {
+    console.error('更新项目失败:', error)
+  } finally {
+    editing.value = false
+  }
 }
 
 const handleDelete = async (id: number) => {

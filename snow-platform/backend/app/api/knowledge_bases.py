@@ -7,7 +7,7 @@ import os
 
 from app.core.database import get_db
 from app.models import KnowledgeBase, KnowledgeDocument
-from app.schemas import KnowledgeBaseCreate, KnowledgeBaseResponse, KnowledgeDocumentResponse
+from app.schemas import KnowledgeBaseCreate, KnowledgeBaseUpdate, KnowledgeBaseResponse, KnowledgeDocumentResponse
 from app.services.rag_service import rag_service
 from app.services.document_parser import DocumentParser
 
@@ -46,6 +46,23 @@ async def create_knowledge_base(kb_data: KnowledgeBaseCreate, db: AsyncSession =
     await db.flush()
     await db.refresh(knowledge_base)
     
+    return knowledge_base
+
+
+@router.put("/{kb_id}", response_model=KnowledgeBaseResponse)
+async def update_knowledge_base(kb_id: int, kb_data: KnowledgeBaseUpdate,
+                                db: AsyncSession = Depends(get_db)):
+    """更新知识库"""
+    result = await db.execute(select(KnowledgeBase).where(KnowledgeBase.id == kb_id))
+    knowledge_base = result.scalar_one_or_none()
+    if not knowledge_base:
+        raise HTTPException(status_code=404, detail="知识库不存在")
+    if kb_data.name is not None:
+        knowledge_base.name = kb_data.name
+    if kb_data.description is not None:
+        knowledge_base.description = kb_data.description
+    await db.flush()
+    await db.refresh(knowledge_base)
     return knowledge_base
 
 

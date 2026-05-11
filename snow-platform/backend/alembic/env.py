@@ -1,15 +1,16 @@
 from logging.config import fileConfig
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
-from alembic import context
-import sys
 import os
+import sys
+
+from sqlalchemy import create_engine, pool
+from alembic import context
 
 # 添加项目根目录到路径
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from app.core.database import Base
-from app.models import *  # noqa
+from app.core.config import settings  # noqa: E402
+from app.core.database import Base  # noqa: E402
+from app.models import *  # noqa: F401,F403
 
 config = context.config
 
@@ -19,10 +20,20 @@ if config.config_file_name is not None:
 target_metadata = Base.metadata
 
 
+def sync_database_url(url: str) -> str:
+    """应用使用 aiomysql；Alembic 迁移使用同步 pymysql。"""
+    if "+aiomysql" in url:
+        return url.replace("+aiomysql", "+pymysql", 1)
+    return url
+
+
+def get_url() -> str:
+    return sync_database_url(settings.DATABASE_URL)
+
+
 def run_migrations_offline():
-    url = config.get_main_option("sqlalchemy.url")
     context.configure(
-        url=url,
+        url=get_url(),
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
@@ -33,16 +44,12 @@ def run_migrations_offline():
 
 
 def run_migrations_online():
-    connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
-    )
+    connectable = create_engine(get_url(), poolclass=pool.NullPool)
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, 
-            target_metadata=target_metadata
+            connection=connection,
+            target_metadata=target_metadata,
         )
 
         with context.begin_transaction():
